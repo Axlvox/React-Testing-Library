@@ -3,12 +3,11 @@ import App from '../App';
 import renderWithRouter from '../renderWithRouter';
 
 const rotaPokemon = '/pokemon/25';
+const pokemonName = 'Pikachu';
 
 describe('Teste o componente <PokemonDetails.tsx />', () => {
   test('Testa se as informações detalhadas do Pokémon selecionado são mostradas na tela:', async () => {
     renderWithRouter(<App />, { route: rotaPokemon });
-
-    const pokemonName = 'Pikachu';
 
     const name = screen.getByRole('heading', {
       name: new RegExp(`${pokemonName} details`, 'i'),
